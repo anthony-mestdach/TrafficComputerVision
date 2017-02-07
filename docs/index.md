@@ -1,7 +1,3 @@
----
-layout: post
-title: Blog van Anthony Mestdach
----
 ## Welcome to GitHub Pages test
 
 You can use the [editor on GitHub](https://github.com/anthony-mestdach/TrafficComputerVision/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
