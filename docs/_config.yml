@@ -11,11 +11,11 @@ paginate: 10
 highlighter: ""
 markdown: kramdown
 gems: [jekyll-paginate]
-timezone: Europe/Istanbul
+timezone: Europe/Brussels
 paginateLabel: page
 paginate_path: "page/:num"
 permalink: /:categories/:year/:month/:day/:title
-baseurl: http://domain.com
+baseurl: https://anthony-mestdach.github.io/TrafficComputerVision/
 
 # Includes
 addthisId: ""
