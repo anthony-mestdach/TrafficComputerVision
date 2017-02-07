@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}.html -f
+	RewriteRule ^(.+)$ $1.html [L,QSA]
+
+	ErrorDocument 404 /404.html
+
+	RewriteCond %{HTTP_HOST} ^www.domain\.com [NC]
+	RewriteRule ^(.*)$ http://domain.com/$1 [L,R=301]
+</IfModule>
