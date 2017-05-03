@@ -54,18 +54,18 @@ namespace LaneDetection
             }
 
             // Filter image based on color to find markings
-            original = buffer.ToImage<Bgr, byte>();
+            original = buffer.ToImage<Bgr, byte>().Resize(1280, 720, Inter.Linear);
             Image<Gray, byte> bin = laneMarkFilter.FilterMarkings(original.Clone());
-            Image<Gray, byte> temp = bin.Clone();
+            Image<Gray, byte> birdsEyeView = new Image<Gray, byte>(bin.Size);
 
             // Generate bird eye view
             Mat a = new Mat();
             Mat b = new Mat();
-            transformer.BirdEye(bin, out a, out b, out temp);
+            transformer.GetBirdEye(bin, out a, out b, out birdsEyeView);
 
             // Find markings location
-            Image<Bgr, byte> birdEyeWithBoxes = temp.Convert<Bgr, byte>();
-            detector.fit_lines_sliding_window(temp, out birdEyeWithBoxes, 10);
+            Image<Bgr, byte> birdsEyeWithBoxes = new Image<Bgr, byte>(birdsEyeView.Size);
+            detector.FitLinesInSlidingWindows(birdsEyeView, out birdsEyeWithBoxes, 13);
 
             int size = detector.LeftPoints.Count;
             if (detector.LeftPoints.Count == detector.RightPoints.Count)

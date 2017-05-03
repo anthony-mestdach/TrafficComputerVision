@@ -14,7 +14,7 @@
         protected override void Dispose(bool disposing)
         {
             laneMarkFilter.Dispose();
-            capture.Dispose();
+            if (capture != null) capture.Dispose();
             if (disposing && (components != null))
             {
                 components.Dispose();

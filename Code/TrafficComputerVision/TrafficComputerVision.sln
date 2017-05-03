@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaneDetection", "LaneDetection\LaneDetection.csproj", "{6142336F-3A4C-4ED9-AD32-B13CFBACECAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficSignRec", "TrafficSignRec\TrafficSignRec.csproj", "{21791F6B-A66C-47A4-9369-B9AB1342863C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaarCascadeDetector", "HaarCascadeDetector\HaarCascadeDetector.csproj", "{436F657A-37FC-4EA7-83B3-40F94967DB8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,22 @@ Global
 		{6142336F-3A4C-4ED9-AD32-B13CFBACECAD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6142336F-3A4C-4ED9-AD32-B13CFBACECAD}.Release|x64.ActiveCfg = Release|x64
 		{6142336F-3A4C-4ED9-AD32-B13CFBACECAD}.Release|x64.Build.0 = Release|x64
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Debug|x64.Build.0 = Debug|Any CPU
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Release|x64.ActiveCfg = Release|Any CPU
+		{21791F6B-A66C-47A4-9369-B9AB1342863C}.Release|x64.Build.0 = Release|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Debug|x64.Build.0 = Debug|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Release|x64.ActiveCfg = Release|Any CPU
+		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
