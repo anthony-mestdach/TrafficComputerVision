@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficSignRec", "TrafficSi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaarCascadeDetector", "HaarCascadeDetector\HaarCascadeDetector.csproj", "{436F657A-37FC-4EA7-83B3-40F94967DB8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homography", "Homography\Homography.csproj", "{D8ECDC21-06F4-4777-AE53-029EA8B402F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Release|x64.ActiveCfg = Release|Any CPU
 		{436F657A-37FC-4EA7-83B3-40F94967DB8F}.Release|x64.Build.0 = Release|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Debug|x64.Build.0 = Debug|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Release|x64.ActiveCfg = Release|Any CPU
+		{D8ECDC21-06F4-4777-AE53-029EA8B402F1}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

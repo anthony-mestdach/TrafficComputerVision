@@ -1,0 +1,26 @@
+﻿<Window x:Class="Homography.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homography" 
+        mc:Ignorable="d"
+        Title="Homography tool" Height="482.54" Width="620"
+        >
+    <Grid SizeChanged="UpdateGui" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.Row="1" x:Name="imOriginal" Margin="0,0,0,0" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image Grid.Column="1" Grid.Row="1" x:Name="imResult" Margin="0,0,0,0" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Grid.Row="0" Grid.Column="0" x:Name="btnLoadFile" Content="Load File" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLoadFile_Click"/>
+        <Button Grid.Row="0" Grid.Column="1" x:Name="btnRectifyTarget" Content="Rectify Rectangle" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="117" Click="btnRectifyTarget_Click"/>
+        <local:RectangleOverlay Grid.Column="1" Grid.Row="1" x:Name="canvasRes" Margin="0,0,0,0"/>
+        <local:RectangleOverlay Grid.Column="0" Grid.Row="1" x:Name="canvasOrig" Margin="0,0,0,0"/>
+    </Grid>
+</Window>

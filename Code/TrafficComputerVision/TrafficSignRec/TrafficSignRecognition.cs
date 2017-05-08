@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using System.Diagnostics;
 
 namespace TrafficSignRec
 {
@@ -20,6 +21,7 @@ namespace TrafficSignRec
         public TrafficSignRecognition()
         {
             InitializeComponent();
+            this.Text = "Traffic Sign Recognition";
             detector = new CandidateDetector(5);
             matcher = new SignMatcher();
         }
@@ -39,12 +41,16 @@ namespace TrafficSignRec
                 fileDia.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
                 if (fileDia.ShowDialog() == DialogResult.OK)
                 {
+                    Stopwatch stopWatch = new Stopwatch();
+                    stopWatch.Start();
                     Image<Bgr, byte> src = new Image<Bgr, byte>(fileDia.FileName);
                     detector.FindCandidates(src);
                     matcher.ReadKnownSigns();
                     matcher.Candidates = detector.Candidates;
                     matcher.MatchSigns(matcher.Candidates, matcher.KnownSigns);
                     imageBox1.Image = DrawSigns(src, matcher.Matches, detector.Candidates);
+                    stopWatch.Stop();
+                    this.Text = "Hits: " + matcher.Matches + "  Time: " + stopWatch.ElapsedMilliseconds;
                 }
             }
             catch (Exception ex)

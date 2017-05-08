@@ -89,7 +89,6 @@ namespace HaarCascadeDetector
                 {
                     ImageAfterDetection.Draw(sign, new Bgr(0, 0, 255), 3);
                 }
-                TimeSpan ts = stopWatch.Elapsed;
 
                 // Generate basic info
                 Info = "Hits: " + signsDetected.Length + "  Time: " + stopWatch.ElapsedMilliseconds;

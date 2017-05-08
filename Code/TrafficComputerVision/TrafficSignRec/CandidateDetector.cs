@@ -94,12 +94,14 @@ namespace TrafficSignRec
                 .And(ch[2].InRange(value_blue_low, value_blue_high));
 
             // Show binary images
-            ImageViewer vBL = new ImageViewer();
-            vBL.Image = th_blue;
-            vBL.Show();
-            ImageViewer vRD = new ImageViewer();
-            vRD.Image = th_red;
-            vRD.Show();
+            //ImageViewer vBL = new ImageViewer();
+            //vBL.Image = th_blue;
+            //vBL.Text = "Blue binary";
+            //vBL.Show();
+            //ImageViewer vRD = new ImageViewer();
+            //vRD.Image = th_red;
+            //vRD.Text = "Red binary";
+            //vRD.Show();
 
             // Find contours of blobs
             VectorOfVectorOfPoint cont_red = new VectorOfVectorOfPoint();

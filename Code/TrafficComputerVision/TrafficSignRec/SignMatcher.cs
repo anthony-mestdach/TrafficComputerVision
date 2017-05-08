@@ -3,6 +3,7 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Features2D;
 using Emgu.CV.Flann;
 using Emgu.CV.Structure;
+using Emgu.CV.UI;
 using Emgu.CV.Util;
 using Emgu.CV.XFeatures2D;
 using System;
@@ -173,7 +174,7 @@ namespace TrafficSignRec
                         //viewer.Image = Draw(knownsign.ImageGray.Convert<Bgr, byte>(), candi.ImageGray.Convert<Bgr, byte>(), knownsign.KeyPoints, candi.KeyPoints, match);
                         //viewer.Text = "Match score: " + score;
                         //viewer.Show();
-                    } 
+                    }
                 }
                 if (bestMatch != null && bestMatch.MatchScore > 0) Matches.Add(bestMatch);
             }
@@ -264,8 +265,7 @@ namespace TrafficSignRec
             Mat result = new Mat();
             Features2DToolbox.DrawMatches(knownSign, signKp, candidate, candKp,
                 match, result, new MCvScalar(255, 255, 255), new MCvScalar(255, 255, 255), null);
-            homography = Features2DToolbox.GetHomographyMatrixFromMatchedFeatures(signKp,
-                                candKp, match, null, 2);
+            homography = Features2DToolbox.GetHomographyMatrixFromMatchedFeatures(signKp, candKp, match, null, 2);
             if (homography != null)
             {
                 //draw a rectangle along the projected model
