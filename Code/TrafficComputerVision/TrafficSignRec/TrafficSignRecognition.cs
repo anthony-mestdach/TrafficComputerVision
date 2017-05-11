@@ -50,7 +50,7 @@ namespace TrafficSignRec
                     matcher.MatchSigns(matcher.Candidates, matcher.KnownSigns);
                     imageBox1.Image = DrawSigns(src, matcher.Matches, detector.Candidates);
                     stopWatch.Stop();
-                    this.Text = "Hits: " + matcher.Matches + "  Time: " + stopWatch.ElapsedMilliseconds;
+                    this.Text = "Hits: " + matcher.Matches.Count + "  Time: " + stopWatch.ElapsedMilliseconds;
                 }
             }
             catch (Exception ex)
