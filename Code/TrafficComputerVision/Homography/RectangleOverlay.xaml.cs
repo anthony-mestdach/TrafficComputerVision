@@ -107,6 +107,11 @@ namespace Homography
             return new Point((p1.X - p2.X), p1.Y - p2.Y);
         }
 
+        /// <summary>
+        /// Moves a circle to a new location
+        /// </summary>
+        /// <param name="el"> circle to move </param>
+        /// <param name="p"> new location </param>
         private void MoveEllipseOrAnchor(Ellipse el, Point p)
         {
             if (p.X < 0) p.X = 0;
@@ -130,6 +135,9 @@ namespace Homography
             
         }
 
+        /// <summary>
+        /// Updates the lines between the circles
+        /// </summary>
         private void UpdateRectangle()
         {
             for (int i = 0; i < lines.Length; i++)
@@ -149,14 +157,23 @@ namespace Homography
             originalSize = new Size(canvas.ActualWidth, canvas.ActualHeight);
         }
 
+        /// <summary>
+        /// Gets the location of an element on the overlay
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns> location </returns>
         private Point GetLocation(UIElement e)
         {
             return e.TranslatePoint(new Point(0, 0), canvas);
         }
 
+        /// <summary>
+        /// Overlay resize handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void canvas_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            
             Size newSize = new Size(canvas.ActualWidth, canvas.ActualHeight);
             double wRatio = newSize.Width / originalSize.Width;
             double hRatio = newSize.Height / originalSize.Height;
@@ -173,10 +190,18 @@ namespace Homography
             OnRecatangleChanged(EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Initialises the overlay
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void canvas_Loaded(object sender, RoutedEventArgs e)
         {
+            // create circles and lines
             ellipses = new Ellipse[] { e1, e2, e3, e4 };
             lines = new Line[] { new Line(), new Line(), new Line(), new Line() };
+
+            // bind event handlers
             Array.ForEach(ellipses, el =>
             {
                 el.MouseLeftButtonDown += new MouseButtonEventHandler(CtrlMouseLBDown);
@@ -185,7 +210,6 @@ namespace Homography
                 el.MouseEnter += new MouseEventHandler(CtrlMouseEnter);
                 el.MouseLeave += new MouseEventHandler(CtrlMouseLeave);
             });
-
             anchor = c1;
             anchor.MouseLeftButtonDown += new MouseButtonEventHandler(CtrlMouseLBDown);
             anchor.MouseLeftButtonUp += new MouseButtonEventHandler(CtrlMouseLBUp);
@@ -194,6 +218,7 @@ namespace Homography
             anchor.MouseLeave += new MouseEventHandler(CtrlMouseLeave);
             UpdateAnchor();
 
+            // add lines to canvas
             Array.ForEach(lines, l =>
             {
                 canvas.Children.Add(l);
@@ -222,6 +247,9 @@ namespace Homography
             UpdateAnchor();
         }
 
+        /// <summary>
+        /// Calculates the new position of the anchor
+        /// </summary>
         private void UpdateAnchor()
         {
             Point center = GetMidpoint(
@@ -232,11 +260,21 @@ namespace Homography
             Canvas.SetTop(anchor, center.Y);
         }
 
+        /// <summary>
+        /// Gets the midpoint between two points
+        /// </summary>
+        /// <param name="p1"> First point </param>
+        /// <param name="p2"> Second point </param>
+        /// <returns></returns>
         private Point GetMidpoint(Point p1, Point p2)
         {
             return new Point(p1.X + 0.5 * (p2.X - p1.X), p1.Y + 0.5 * (p2.Y - p1.Y));
         }
 
+        /// <summary>
+        /// Resize rectangle and use center circle as anchor
+        /// </summary>
+        /// <param name="scale"> Relative scale </param>
         private void ScaleRectangle(double scale)
         {
             Canvas.SetLeft(ellipses[3], Canvas.GetLeft(ellipses[0]));
@@ -257,11 +295,21 @@ namespace Homography
             OnRecatangleChanged(EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Zoom in button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnZoomIn_Click(object sender, RoutedEventArgs e)
         {
             ScaleRectangle(1.1);
         }
 
+        /// <summary>
+        /// Zoom out button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnZoomOut_Click(object sender, RoutedEventArgs e)
         {
             ScaleRectangle(0.9);
