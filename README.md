@@ -5,14 +5,17 @@ This repository contains basic applications for traffic sign recognition and lan
 
 ## TrafficSignRec
 A SURF (Speeded up robust features) based detection and recognition tool. It uses the homography with RANSAC to increase stability. A set of known signs is matched with candidats in the image. 
+
 ![TrafficSignRec demo](https://github.com/anthony-mestdach/TrafficComputerVision/blob/master/Code/Results/TrafficSignRec/Afbeelding1.png)
 
 ## HaarCascadeDetector
 A Haar based sign detector. Multiple Haar cascade files are included to detect a 90km/h speed limit sign (Belgian). 
+
 ![HaarCascadeDetector demo](https://github.com/anthony-mestdach/TrafficComputerVision/blob/master/Code/Results/HaarCascadeDetector/demo.png)
 
 ## LaneDetection
 A lane detector based on white or yellow road markings. This code is conceptualy based on the Udacity 'Self-Driving Car Engineer Nanodegree' program.
+
 ![LaneDetection demo](https://github.com/anthony-mestdach/TrafficComputerVision/blob/master/Code/Results/LaneDetection/LaneDetection.gif)
 
 ## Installation
