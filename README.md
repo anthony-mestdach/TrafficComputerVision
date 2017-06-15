@@ -4,7 +4,7 @@
 This repository contains basic applications for traffic sign recognition and lane detection. The code is written in C# .NET and uses Emgu CV (3.1.0.2504) as wrapper for OpenCV.
 
 ## TrafficSignRec
-A SURF (Speeded up robust features) based detection and recognition tool. It uses the homography with RANSAC to increase stability. A set of known signs is matched with candidats in the image. 
+A SURF (Speeded up robust features) based detection and recognition tool. It uses the homography with RANSAC to increase stability. A set of known signs is matched with candidates in the image. 
 
 ![TrafficSignRec demo](https://github.com/anthony-mestdach/TrafficComputerVision/blob/master/Code/Results/TrafficSignRec/Afbeelding1.png)
 
