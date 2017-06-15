@@ -16,3 +16,10 @@ A lane detector based on white or yellow road markings. This code is conceptualy
 ![LaneDetection demo](https://github.com/anthony-mestdach/TrafficComputerVision/blob/master/Code/Results/LaneDetection/LaneDetection.gif)
 
 ## Installation
+1) Download and install 'emgucv-windesktop_x64-cuda 3.1.0.x' from https://sourceforge.net/projects/emgucv/files/emgucv/3.1.0/
+2) Clone or download this repository
+3) Open TrafficComputerVision/Code/TrafficComputerVision/TrafficComputerVision.sln
+4) Update the references in the projects to your Emgu installation.
+5) Build for x64
+
+All necessary test data can be found under TrafficComputerVision/Code/TestData/
